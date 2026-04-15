@@ -1,64 +1,198 @@
 import Image from "next/image";
+import { ContactForm } from "@/components/contact-form";
+
+const projects = [
+  {
+    title: "Rider Mesh",
+    summary:
+      "Real-time rider platform with route tracking, booking flow, and delivery analytics.",
+    tags: ["React Native", "Firebase", "Maps"],
+    href: "#",
+  },
+  {
+    title: "Atlas Commerce",
+    summary:
+      "Performance-focused storefront redesign that boosted conversion and session duration.",
+    tags: ["Next.js", "Stripe", "A/B Testing"],
+    href: "#",
+  },
+  {
+    title: "Pulse CRM",
+    summary:
+      "Sales pipeline dashboard with role-based access, activity timelines, and smart filters.",
+    tags: ["TypeScript", "Node.js", "PostgreSQL"],
+    href: "#",
+  },
+];
+
+const skills = [
+  { label: "Frontend Engineering", items: ["Next.js", "React", "Tailwind", "Animation"] },
+  { label: "Backend & API", items: ["Node.js", "Express", "REST", "Auth Flows"] },
+  { label: "Product Craft", items: ["UX Thinking", "Performance", "SEO", "Accessibility"] },
+];
+
+const testimonials = [
+  {
+    quote:
+      "Aman translated vague business goals into a polished product with impressive speed.",
+    person: "Placeholder Client, Product Lead",
+  },
+  {
+    quote:
+      "Strong ownership and clean communication. The final delivery exceeded our expectations.",
+    person: "Placeholder Manager, Engineering Head",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <div className="pb-16">
+      <header className="sticky top-0 z-20 border-b border-white/10 bg-[#04060bcc]/80 backdrop-blur">
+        <nav className="section-shell flex h-16 items-center justify-between text-sm text-[#d5e2ff]">
+          <a href="#home" className="font-semibold tracking-[0.15em] uppercase text-[#ffb56f]">
+            AMAN
+          </a>
+          <div className="hidden gap-6 md:flex">
+            <a href="#about" className="hover:text-white">About</a>
+            <a href="#projects" className="hover:text-white">Projects</a>
+            <a href="#skills" className="hover:text-white">Skills</a>
+            <a href="#testimonials" className="hover:text-white">Testimonials</a>
+            <a href="#contact" className="hover:text-white">Contact</a>
+          </div>
+        </nav>
+      </header>
+
+      <main id="home" className="section-shell reveal pt-8 md:pt-14">
+        <section className="grid items-center gap-10 rounded-3xl border border-white/10 bg-[linear-gradient(140deg,rgba(255,156,61,0.08),rgba(74,167,255,0.07))] p-6 shadow-[0_32px_90px_rgba(1,5,20,0.6)] md:grid-cols-[1.05fr_0.95fr] md:p-10">
+          <div>
+            <p className="mb-4 text-xs tracking-[0.2em] uppercase text-[#ffb56f]">Portfolio 2026</p>
+            <h1 className="font-[family-name:var(--font-display)] text-4xl leading-tight text-white md:text-6xl">
+              Aman <span className="text-[#4aa7ff]">Khan</span>
+            </h1>
+            <p className="mt-4 max-w-xl text-base leading-relaxed text-[#c6d6f3] md:text-lg">
+              I build high-performance digital experiences that blend strong engineering with cinematic visual storytelling.
+            </p>
+            <div className="mt-7 flex flex-wrap gap-3">
+              <a
+                href="#projects"
+                className="rounded-full bg-[#ff9c3d] px-6 py-3 text-sm font-semibold text-[#151007] transition hover:bg-[#ffb56f]"
+              >
+                View Projects
+              </a>
+              <a
+                href="#contact"
+                className="rounded-full border border-[#4aa7ff] px-6 py-3 text-sm font-semibold text-[#dbe9ff] transition hover:bg-[#4aa7ff1f]"
+              >
+                Let&apos;s Work
+              </a>
+            </div>
+          </div>
+
+          <div className="relative overflow-hidden rounded-2xl border border-white/10">
+            <div className="absolute inset-0 z-10 bg-[linear-gradient(130deg,rgba(3,7,16,0.85),rgba(3,7,16,0.25)_52%,rgba(255,156,61,0.16))]" />
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+              src="/hero-portrait.png"
+              alt="Portrait of Aman Khan"
+              width={1400}
+              height={900}
+              priority
+              className="h-[420px] w-full object-cover object-center md:h-[560px]"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+            <div className="pointer-events-none absolute -bottom-16 -left-12 h-40 w-40 rounded-full bg-[#ff9c3d4d] blur-3xl" />
+            <div className="pointer-events-none absolute -right-10 top-8 h-40 w-40 rounded-full bg-[#4aa7ff4d] blur-3xl" />
+          </div>
+        </section>
+
+        <section id="about" className="reveal pt-20 md:pt-24">
+          <h2 className="section-title">About</h2>
+          <p className="mt-5 max-w-3xl text-base leading-relaxed text-[#b5c4df] md:text-lg">
+            I&apos;m a full-stack developer focused on building interfaces that feel alive and systems that stay reliable under scale. I care deeply about clean architecture, measurable product outcomes, and design that feels intentional.
+          </p>
+        </section>
+
+        <section id="projects" className="reveal pt-20 md:pt-24">
+          <div className="mb-7 flex items-end justify-between gap-6">
+            <h2 className="section-title">Projects</h2>
+            <p className="text-sm text-[#9cb1d6]">Placeholder cards ready for your final links and case studies.</p>
+          </div>
+          <div className="grid gap-5 md:grid-cols-3">
+            {projects.map((project) => (
+              <article key={project.title} className="card-glow rounded-2xl p-5">
+                <h3 className="text-xl font-semibold text-[#eef3ff]">{project.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-[#b9c8e3]">{project.summary}</p>
+                <ul className="mt-4 flex flex-wrap gap-2 text-xs text-[#d8e4ff]">
+                  {project.tags.map((tag) => (
+                    <li key={tag} className="rounded-full border border-white/15 px-3 py-1">
+                      {tag}
+                    </li>
+                  ))}
+                </ul>
+                <a href={project.href} className="mt-5 inline-flex text-sm text-[#ffb56f] hover:text-[#ffd7ac]">
+                  Case Study -&gt;
+                </a>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section id="skills" className="reveal pt-20 md:pt-24">
+          <h2 className="section-title">Skills</h2>
+          <div className="mt-6 grid gap-5 md:grid-cols-3">
+            {skills.map((group) => (
+              <article key={group.label} className="card-glow rounded-2xl p-5">
+                <h3 className="text-lg font-semibold text-[#e8efff]">{group.label}</h3>
+                <ul className="mt-4 space-y-2 text-sm text-[#bfcee9]">
+                  {group.items.map((item) => (
+                    <li key={item} className="flex items-center gap-2">
+                      <span className="h-2 w-2 rounded-full bg-[#4aa7ff]" aria-hidden />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section id="testimonials" className="reveal pt-20 md:pt-24">
+          <h2 className="section-title">Testimonials</h2>
+          <div className="mt-6 grid gap-5 md:grid-cols-2">
+            {testimonials.map((item) => (
+              <blockquote key={item.person} className="card-glow rounded-2xl p-6 text-[#d9e5ff]">
+                <p className="text-base leading-relaxed">&quot;{item.quote}&quot;</p>
+                <footer className="mt-4 text-sm text-[#9ab1d8]">{item.person}</footer>
+              </blockquote>
+            ))}
+          </div>
+        </section>
+
+        <section id="contact" className="reveal pt-20 md:pt-24">
+          <h2 className="section-title">Contact</h2>
+          <p className="mt-4 max-w-2xl text-[#b8c8e5]">
+            Have an opportunity, collaboration idea, or product challenge? Send a message and I&apos;ll get back to you.
+          </p>
+          <div className="mt-8 grid gap-6 md:grid-cols-[0.7fr_1.3fr]">
+            <aside className="card-glow rounded-2xl p-5">
+              <p className="text-sm uppercase tracking-[0.16em] text-[#9ab2db]">Direct Links</p>
+              <ul className="mt-4 space-y-3 text-sm text-[#e4eeff]">
+                <li>
+                  <a href="mailto:aman@example.com" className="hover:text-[#ffbf80]">aman@example.com</a>
+                </li>
+                <li>
+                  <a href="https://github.com/aman" target="_blank" rel="noopener noreferrer" className="hover:text-[#ffbf80]">
+                    github.com/aman
+                  </a>
+                </li>
+                <li>
+                  <a href="https://linkedin.com/in/aman" target="_blank" rel="noopener noreferrer" className="hover:text-[#ffbf80]">
+                    linkedin.com/in/aman
+                  </a>
+                </li>
+              </ul>
+            </aside>
+            <ContactForm />
+          </div>
+        </section>
       </main>
     </div>
   );
