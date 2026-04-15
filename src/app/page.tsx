@@ -3,44 +3,45 @@ import { ContactForm } from "@/components/contact-form";
 
 const projects = [
   {
-    title: "Rider Mesh",
+    title: "AI Knowledge Assistant",
     summary:
-      "Real-time rider platform with route tracking, booking flow, and delivery analytics.",
-    tags: ["React Native", "Firebase", "Maps"],
-    href: "#",
+      "Built an AI-powered assistant with retrieval workflows to answer product and documentation queries with high accuracy.",
+    tags: ["Next.js", "OpenAI API", "RAG"],
+    href: "https://github.com/jatin-x-pal",
   },
   {
-    title: "Atlas Commerce",
+    title: "Modern SaaS Dashboard",
     summary:
-      "Performance-focused storefront redesign that boosted conversion and session duration.",
-    tags: ["Next.js", "Stripe", "A/B Testing"],
-    href: "#",
+      "Designed and developed a scalable full-stack dashboard with secure auth, analytics, and optimized data pipelines.",
+    tags: ["React", "Node.js", "MongoDB"],
+    href: "https://github.com/jatin-x-pal",
   },
   {
-    title: "Pulse CRM",
+    title: "Prompt Workflow Studio",
     summary:
-      "Sales pipeline dashboard with role-based access, activity timelines, and smart filters.",
-    tags: ["TypeScript", "Node.js", "PostgreSQL"],
-    href: "#",
+      "Created a prompt management and evaluation interface for rapid AI experimentation and deployment.",
+    tags: ["TypeScript", "Express", "Prompt Engineering"],
+    href: "https://github.com/jatin-x-pal",
   },
 ];
 
 const skills = [
-  { label: "Frontend Engineering", items: ["Next.js", "React", "Tailwind", "Animation"] },
-  { label: "Backend & API", items: ["Node.js", "Express", "REST", "Auth Flows"] },
-  { label: "Product Craft", items: ["UX Thinking", "Performance", "SEO", "Accessibility"] },
+  { label: "Frontend", items: ["React", "Next.js", "Tailwind CSS"] },
+  { label: "Backend", items: ["Node.js", "Express", "MongoDB"] },
+  { label: "AI", items: ["OpenAI API", "RAG", "Prompt Engineering"] },
+  { label: "Tools", items: ["Git", "Docker", "Vercel"] },
 ];
 
 const testimonials = [
   {
     quote:
-      "Aman translated vague business goals into a polished product with impressive speed.",
-    person: "Placeholder Client, Product Lead",
+      "Jatin delivers clean, scalable solutions and has a strong understanding of modern web technologies.",
+    person: "Senior Developer",
   },
   {
     quote:
-      "Strong ownership and clean communication. The final delivery exceeded our expectations.",
-    person: "Placeholder Manager, Engineering Head",
+      "His ability to combine AI with full-stack development makes his work stand out.",
+    person: "Project Mentor",
   },
 ];
 
@@ -50,7 +51,7 @@ export default function Home() {
       <header className="sticky top-0 z-20 border-b border-white/10 bg-[#04060bcc]/80 backdrop-blur">
         <nav className="section-shell flex h-16 items-center justify-between text-sm text-[#d5e2ff]">
           <a href="#home" className="font-semibold tracking-[0.15em] uppercase text-[#ffb56f]">
-            AMAN
+            JATIN
           </a>
           <div className="hidden gap-6 md:flex">
             <a href="#about" className="hover:text-white">About</a>
@@ -67,10 +68,10 @@ export default function Home() {
           <div>
             <p className="mb-4 text-xs tracking-[0.2em] uppercase text-[#ffb56f]">Portfolio 2026</p>
             <h1 className="font-[family-name:var(--font-display)] text-4xl leading-tight text-white md:text-6xl">
-              Aman <span className="text-[#4aa7ff]">Khan</span>
+              Jatin <span className="text-[#4aa7ff]">Pal</span>
             </h1>
             <p className="mt-4 max-w-xl text-base leading-relaxed text-[#c6d6f3] md:text-lg">
-              I build high-performance digital experiences that blend strong engineering with cinematic visual storytelling.
+              I build AI-powered systems and modern web experiences.
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
               <a
@@ -92,7 +93,7 @@ export default function Home() {
             <div className="absolute inset-0 z-10 bg-[linear-gradient(130deg,rgba(3,7,16,0.85),rgba(3,7,16,0.25)_52%,rgba(255,156,61,0.16))]" />
             <Image
               src="/hero-portrait.png"
-              alt="Portrait of Aman Khan"
+              alt="Portrait of Jatin Pal"
               width={1400}
               height={900}
               priority
@@ -106,14 +107,14 @@ export default function Home() {
         <section id="about" className="reveal pt-20 md:pt-24">
           <h2 className="section-title">About</h2>
           <p className="mt-5 max-w-3xl text-base leading-relaxed text-[#b5c4df] md:text-lg">
-            I&apos;m a full-stack developer focused on building interfaces that feel alive and systems that stay reliable under scale. I care deeply about clean architecture, measurable product outcomes, and design that feels intentional.
+            I am a developer focused on building intelligent systems and high-performance web applications. I combine full-stack engineering with AI to create impactful digital products. Currently exploring scalable architectures, AI integrations, and futuristic UI experiences.
           </p>
         </section>
 
         <section id="projects" className="reveal pt-20 md:pt-24">
           <div className="mb-7 flex items-end justify-between gap-6">
             <h2 className="section-title">Projects</h2>
-            <p className="text-sm text-[#9cb1d6]">Placeholder cards ready for your final links and case studies.</p>
+            <p className="text-sm text-[#9cb1d6]">Selected work around AI systems and modern full-stack product engineering.</p>
           </div>
           <div className="grid gap-5 md:grid-cols-3">
             {projects.map((project) => (
@@ -127,7 +128,12 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
-                <a href={project.href} className="mt-5 inline-flex text-sm text-[#ffb56f] hover:text-[#ffd7ac]">
+                <a
+                  href={project.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-5 inline-flex text-sm text-[#ffb56f] hover:text-[#ffd7ac]"
+                >
                   Case Study -&gt;
                 </a>
               </article>
@@ -137,7 +143,7 @@ export default function Home() {
 
         <section id="skills" className="reveal pt-20 md:pt-24">
           <h2 className="section-title">Skills</h2>
-          <div className="mt-6 grid gap-5 md:grid-cols-3">
+          <div className="mt-6 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
             {skills.map((group) => (
               <article key={group.label} className="card-glow rounded-2xl p-5">
                 <h3 className="text-lg font-semibold text-[#e8efff]">{group.label}</h3>
@@ -176,16 +182,26 @@ export default function Home() {
               <p className="text-sm uppercase tracking-[0.16em] text-[#9ab2db]">Direct Links</p>
               <ul className="mt-4 space-y-3 text-sm text-[#e4eeff]">
                 <li>
-                  <a href="mailto:aman@example.com" className="hover:text-[#ffbf80]">aman@example.com</a>
+                  <a href="mailto:jatinpaldelhi@gmail.com" className="hover:text-[#ffbf80]">jatinpaldelhi@gmail.com</a>
                 </li>
                 <li>
-                  <a href="https://github.com/aman" target="_blank" rel="noopener noreferrer" className="hover:text-[#ffbf80]">
-                    github.com/aman
+                  <a href="https://github.com/jatin-x-pal" target="_blank" rel="noopener noreferrer" className="hover:text-[#ffbf80]">
+                    github.com/jatin-x-pal
                   </a>
                 </li>
                 <li>
-                  <a href="https://linkedin.com/in/aman" target="_blank" rel="noopener noreferrer" className="hover:text-[#ffbf80]">
-                    linkedin.com/in/aman
+                  <a
+                    href="https://www.linkedin.com/in/jatin-pal-112190329?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-[#ffbf80]"
+                  >
+                    linkedin.com/in/jatin-pal-112190329
+                  </a>
+                </li>
+                <li>
+                  <a href="https://leetcode.com/u/jatinxpal/" target="_blank" rel="noopener noreferrer" className="hover:text-[#ffbf80]">
+                    leetcode.com/u/jatinxpal
                   </a>
                 </li>
               </ul>
